@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Anton+SC&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lilita+One&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: "Montserrat", serif !important;
+    font-weight: 500 !important;
+}
+
+.register-form {
+    top: 40%;
+}
+.text-decoration-none:hover {
+    text-decoration: underline !important;
+}
