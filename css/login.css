@@ -7,14 +7,15 @@
 
 body {
     background-color: #f0f0f0;
-        font-family: "Montserrat", serif !important;
+    font-family: "Montserrat", serif !important;
     font-weight: 550 !important;
 }
 .login-form {
-    /* background-color: #a87474; */
+    background-color: rgba(244, 244, 244, 0.773);
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    top: 40%;
+    top: 25%;
+    transform: translateX(-50%);
 }
 .text-decoration-none:hover {
     text-decoration: underline !important;

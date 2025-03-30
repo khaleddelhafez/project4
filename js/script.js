@@ -2,33 +2,54 @@
 
 let registerBtn = document.getElementById("register-btn");
 
+let loggedIn = false;
+
 function register() {
-    const customerFirstName = document.querySelector(".customer-name").value;
-    const customerLastName = document.querySelector(".customer-lastname").value;
-    const customerEmail = document.querySelector(".customer-email").value;
-    const customerPassword = document.querySelector(".customer-password").value;
-    console.log(customerFirstName, customerLastName, customerEmail, customerPassword);
+    const firstName = document.querySelector("#firstName").value;
+    const lastName = document.querySelector("#lastName").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    console.log(firstName, lastName, email, password);
+    if (!firstName || !lastName || !email || !password) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+    users[email] = {password , firstName, lastName};
+    localStorage.setItem('users', JSON.stringify(users))
+    alert("Account created successfuly!");
+    window.location.href = "login.html"
 }
 
-// registerBtn.addEventListener("click", ()=>{
-//     register();
-// });
-let searchdrop = document.querySelectorAll(".dropdown-menu");
-let dropBtn = document.querySelector(".drop-btn");
-let dropdownItems = document.querySelectorAll(".dropdown-item");
-
-dropdownItems.forEach(item => {
-    item.addEventListener("click", () => {
-        dropBtn.textContent = item.textContent;
-    })
-})
-
-
 // //////////////   login section
+function login(){
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    const users = JSON.parse(localStorage.getItem("users")) || {};
+
+    if(users[email] && users[email].password === password ){
+        localStorage.setItem('loggedInUser' , JSON.stringify(users[email]));
+        loggedIn = true;
+        localStorage.setItem('loggedIn', loggedIn);
+
+        window.location.href = 'loggedin.html';
+    } else {
+        alert("Incorrect Email or Password");
+    }
+}
 
 
-
-
+function logout() {
+    localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('loggedIn');
+    loggedIn = false;
+    localStorage.removeItem('favorites');
+    localStorage.removeItem('cart');
+    /////////
+    window.location.href = 'index.html';
+}
 
 // ////////////// products section
 
@@ -53,31 +74,30 @@ const products = [
     new product(4, 'PS3', 800 , 'Video Games', 'sexual', ''),
     new product(5, 'PS2', 600 , 'Video Games', 'sexual', ''),
     new product(6, 'PS1', 400 , 'Video Games', 'sexual', ''),
+    new product(7, 'breclet', 100, 'breclets', 'men', 'images/freepik__background__628022.jpg')
 ]
 
 function displayProducts(productsList = products) {
     const productsContainer = document.getElementById('products-container');
-    productsContainer.innerHTML=''
     
-    // if (productsList.length === 0) {
-    //     const searchError = document.querySelector(".search-result");
-    //     searchError.innerHTML = 'No results found for your search';
-    //     return;
-    // } else {
-    //     document.querySelector(".search-result").innerHTML = '';
-    // }
+    // Only proceed if we're on a page with a products container
+    if (!productsContainer) {
+        return;
+    }
+    
+    productsContainer.innerHTML = '';
         
     productsList.forEach(product => {
         const productContent = 
-        `<div class="col-12 col-md-6 col-xl-4 mb-4">
-            <div class="card">
-                <img src="${product.image}" alt="${product.name}" class="card-img-top">
+        `<div class=" col-6 col-xl-4 mb-4 px-1 px-md-3">
+            <div class="card product-card">
+                <img src="${product.image}" alt="${product.name}" class="card-img-top product-image">
                 <div class="card-body text-center">
                     <h4 class="card-title mb-3 fw-bold">${product.name}</h4>
                     <p class="card-text mb-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
                     <p class="card-text mb-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
                     <div class="action-container d-flex gap-3 align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart favorite-icon" onclick="toggleFavorite(${product.id})"></i>
+                        <i class="fa-solid fa-heart favorite-icon mb-1" onclick="toggleFavorite(${product.id})"></i>
                         <button class="btn btn-primary add-cart-btn fw-semibold mb-2">Add to Cart</button>
                     </div>
                 </div>
@@ -87,8 +107,10 @@ function displayProducts(productsList = products) {
     })
 }
 
-displayProducts();
-
+// Only call displayProducts if we're on a page with products
+if (document.getElementById('products-container')) {
+    displayProducts();
+}
 
 function searchProducts() {
     const searchType = document.getElementById("searchType").value;
@@ -114,15 +136,27 @@ function searchProducts() {
     displayProducts(filteredproducts)
 }
 
-// function toggleFavorite(productId) {
-//     const heartanimation = document.querySelectorAll(".favorite-icon");
-//     heartanimation.forEach(heart =>{
-//         heart.onclick = heart.classList.add('active');
-//         return heart;
-//     })
-// }
+function toggleFavorite(productId) {
+    const heartanimation = document.querySelectorAll(".favorite-icon");
+    heartanimation.forEach(heart =>{
+        heart.onclick = heart.classList.add('active');
+        return heart;
+    })
+}
 
+const cartCount = document.querySelector(".cart-count");
 
+if(cartCount.innerHTML >= 10){
+    cartCount.style.fontSize = '18px';
+    // cartCount.style.height = '30px';
+}
 
+const cartProductContainer = document.getElementById("cart-product-container");
+const cartStatus = document.querySelector(".cart-status");
 
+if(cartProductContainer.innerHTML.trim() === ''){
+    cartStatus.textContent = 'Cart is empty';
+}else{
+    cartStatus.textContent = 'Products'
+}
 

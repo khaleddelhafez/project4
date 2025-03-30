@@ -12,7 +12,11 @@ body {
 }
 
 .register-form {
-    top: 40%;
+    top: 25%;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.13);
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: rgba(244, 244, 244, 0.773);
 }
 .text-decoration-none:hover {
     text-decoration: underline !important;

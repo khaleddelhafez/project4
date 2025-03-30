@@ -9,63 +9,110 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar ">
-        <div class="container-fluid p-2 ps-3">
-        <a class="navbar-brand" href="#">
-            <img src="images/bandicam_2025-03-22_21-20-28-081-removebg-preview.png" width="300px" alt="logo" draggable="false">
-        </a>
-        <div class="me-3 d-flex align-items-center">
-            <span class="text-dark fw-semibold me-5 fs-5">Welcome, Khaled</span>
-            <li class="position-relative me-5 list-unstyled nav-item">
-                <a href="#" data-bs-target="#cart-collapse" data-bs-toggle="collapse" class="cart-icon-link  text-decoration-none">
-                    <i class="fa-solid fa-cart-shopping cart-icon"></i><span class="cart-count fw-bold ">5</span>
-                </a>
-                <div class="collapse z-3 position-absolute bg-light p-3 rounded" id="cart-collapse">
-                    <h6 class="text-secondary">Products</h6>                  
-                    <div id="cartDropdownItems">
-                        <div class="cart-icon-item d-flex align-items-center flex-column">
-                            <div class="d-flex">
-                                <h4>Product Name</h4>
-                                <h5>Price: <span class="text-success">$100</span></h5>
+    <nav class="navbar p-2  ps-1  ps-md-3">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/bandicam_2025-03-22_21-20-28-081-removebg-preview.png" class="logo-img" width="300px" alt="logo" draggable="false">
+            </a>
+            <div class="me-0 me-md-3 d-flex align-items-center">
+                <span class="text-dark fw-semibold  welcome-text">Welcome,Khaled</span>
+                <li class="position-relative me-5 list-unstyled nav-item">
+                    <a href="#" data-bs-target="#cart-collapse" data-bs-toggle="collapse" class="cart-icon-link  text-decoration-none">
+                        <i class="fa-solid fa-cart-shopping cart-icon"></i><span class="cart-count fw-bold rounded-circle ">5</span>
+                        <span class="position-absolute bottom-0 end-0 text-dark cart-text  rounded-circle ">Cart</span>
+                    </a>
+                    <div class="collapse z-3 position-absolute bg-light p-3 rounded" id="cart-collapse">
+                        <h6 class="text-secondary cart-status" >Products</h6>                  
+                        <div id="cartDropdownItems">
+                            <div id="cart-product-container">
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
-                                <span class="mx-3">1</span>
-                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
-                            </div>
+                            <hr>
+                            <a href="#" class="btn btn-outline-secondary w-100 fw-semibold fs-5" onclick="window.location.href='cart.html'">View Cart</a>
                         </div>
-                        <hr>
-                        <a href="#" class="btn btn-outline-secondary w-100 fw-semibold fs-5" onclick="window.location.href='cart.html'">View Cart</a>
-                    </div>
-                </div>                      
-            </li>
-            <button class="btn-log btn-log-out" onclick="window.location.href='index.html'">Log out</button>
-        </div>
+                    </div>                      
+                </li>
+                <button class="btn-log btn-log-out " onclick="window.location.href='index.html'">Log out</button>
+            </div>
         </div>
     </nav>
 
 
     <!-- search bar -->
-    <div class="col-9  mx-auto mt-4">
-        <div class="row justify-content-between">
-            <div class="col-12 col-md-2 p-0 p-md-2">
+    <div class="col-9  mx-auto mt-4" onkeyup="if(event.key === 'Enter') searchProducts()">
+        <div class="row justify-content-between p-3 row-gap-2">
+            <div class="col-12 col-md-3 col-xl-2 p-0 py-md-2">
                 <select name="Search by product Name" id="searchType" class="form-select search-group-item border-2 fw-semibold">
-                <option value="name">Search by product Name</option>
-                <option value="category">Search by category</option>
+                    <option value="name">Search by product Name</option>
+                    <option value="category">Search by category</option>
                 </select>
             </div>
-            <div class="col col-md-9 p-0 p-md-2">
+            <div class="col col-md-7 col-xl-9 p-0 p-md-2">
                 <input type="search" id="searchInput" class="form-control search-group-item border-2 fw-semibold" placeholder="Search..." onkeyup="searchProducts()">
             </div>
-            <div class="col-12 col-md-1 p-0 p-md-2">
+            <div class="col-12 col-md-2 col-xl-1 p-0 py-md-2 ">
                 <button class="btn btn-dark  btn-lg col-12 col-md" id="searchBtn" onclick="searchProducts()">Search</button>
             </div>
-            </div>
         </div>
+    </div>
     
     
     <!--////////////////////////////// products section //////////////////////////////-->
-    <div class="el-container col-9 mx-auto mt-4 ">
+    <div class="el-container col-12 col-md-9 mx-auto mt-4 p-3 p-md-0">
         <div class="row" id="products-container">
     
         </div>  <!-- end row -->
