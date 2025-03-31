@@ -1,16 +1,11 @@
 .remove-item {
-    margin-bottom: 22px;
+    margin-bottom: 23px;
     position: absolute;
     bottom: 0;
     right: 30px;
     font-size: 15px !important;
 }
-@media (max-width: 768px) {
-    .remove-item {
-        right: 10px;
-        font-size: 12px !important;
-    }
-}
+
 .cart-item {
     transition: 0.2s ease;
     border: 2px solid #c7c7c781;
@@ -48,4 +43,31 @@
 }
 .fa-heart {
     color: #ff1313;
+}
+@media (max-width: 768px) {
+    .remove-item {
+        right: 10px;
+        font-size: 12px !important;
+    }
+    .product-name {
+        font-size: 18px;
+    }
+    .category-name {
+        font-size: 14px;
+    }
+    .price-text {
+        font-size: 14px;
+    }
+    .cart-image {
+        height: 160px;
+    }
+    .fav-item {
+        width: 240px !important;
+    }
+    .card-body h4 {
+        font-size: 17px;
+    }
+    .card-body h6 {
+        font-size: 14px;
+    }
 }

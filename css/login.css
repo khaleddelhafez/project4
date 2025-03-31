@@ -24,4 +24,8 @@ body {
     user-select: none;
     cursor: pointer;
 }
-
+@media screen and (max-width: 756px) {
+    .having-account {
+        font-size: 14px !important;
+    }
+}

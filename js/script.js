@@ -89,16 +89,16 @@ function displayProducts(productsList = products) {
         
     productsList.forEach(product => {
         const productContent = 
-        `<div class=" col-6 col-xl-4 mb-4 px-1 px-md-3">
+        `<div class=" col-6 col-xl-4 mb-3 mb-md-4 px-1 px-md-3">
             <div class="card product-card">
                 <img src="${product.image}" alt="${product.name}" class="card-img-top product-image">
-                <div class="card-body text-center">
-                    <h4 class="card-title mb-3 fw-bold">${product.name}</h4>
-                    <p class="card-text mb-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
-                    <p class="card-text mb-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
+                <div class="card-body text-center py-2 py-md-3">
+                    <h4 class="card-title mb-2 mb-md-3 fw-bold">${product.name}</h4>
+                    <p class="card-text mb-1 mb-md-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
+                    <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
                     <div class="action-container d-flex gap-3 align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart favorite-icon mb-1" onclick="toggleFavorite(${product.id})"></i>
-                        <button class="btn btn-primary add-cart-btn fw-semibold mb-2">Add to Cart</button>
+                        <i class="fa-solid fa-heart favorite-icon mb-0 mb-md-1" onclick="toggleFavorite(${product.id})"></i>
+                        <button class="btn btn-primary add-cart-btn fw-semibold mb-1 mb-md-2">Add to Cart</button>
                     </div>
                 </div>
             </div>
