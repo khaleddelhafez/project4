@@ -11,97 +11,157 @@
 </head>
 <body>
     <nav class="navbar p-2  ps-1  ps-md-3">
-        <div class="container-fluid ">
-        <a class="navbar-brand" href="loggedin.html">
-            <img src="images/bandicam_2025-03-22_21-20-28-081-removebg-preview.png" class="logo-img ms-md-1" width="300px" alt="logo" draggable="false">
-        </a>
-        <div class="me-3 d-flex align-items-center">
-            <span class="text-dark fw-semibold  welcome-text fs-5">Welcome, Khaled</span>
-            <li class="position-relative me-5 list-unstyled nav-item">
-                <a href="#" data-bs-target="#cart-collapse" data-bs-toggle="collapse" class="cart-icon-link  text-decoration-none">
-                    <i class="fa-solid fa-cart-shopping cart-icon"></i><span class="cart-count fw-bold rounded-circle ">5</span>
-                    <span class="position-absolute bottom-0 end-0 text-dark cart-text  rounded-circle ">Cart</span>
-                </a>
-                <div class="collapse z-3 position-absolute bg-light p-3 rounded" id="cart-collapse">
-                    <h6 class="text-secondary cart-status" >Products</h6>                  
-                    <div id="cartDropdownItems">
-                        <div id="cart-product-container">
-
+        <div class="container-fluid p-0 px-md-3">
+            <a class="navbar-brand" href="loggedin.html">
+                <img src="images/bandicam_2025-03-22_21-20-28-081-removebg-preview.png" class="logo-img" width="300px" alt="logo" draggable="false">
+            </a>
+            <div class="me-0 me-md-3 d-flex align-items-center">
+                <span class="text-dark fw-semibold  welcome-text">Welcome, Khaled</span>
+                <li class="position-relative me-4 me-md-5 list-unstyled nav-item">
+                    <a href="#" data-bs-target="#cart-collapse" data-bs-toggle="collapse" class="cart-icon-link  text-decoration-none">
+                        <i class="fa-solid fa-cart-shopping cart-icon"></i><span class="cart-count fw-bold rounded-circle ">5</span>
+                        <span class="position-absolute bottom-0 end-0 text-dark cart-text rounded-circle ">Cart</span>
+                    </a>
+                    <div class="collapse z-3 position-absolute bg-light p-3 rounded" id="cart-collapse">
+                        <h6 class="text-secondary cart-status" >Products</h6>                  
+                        <div id="cartDropdownItems">
+                            <div id="cart-product-container">
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-icon-item d-flex align-items-center flex-column">
+                                    <div class="d-flex">
+                                        <h4>Product Name</h4>
+                                        <h5>Price: <span class="text-success">$100</span></h5>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                        <span class="mx-3">1</span>
+                                        <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <a href="#" class="btn btn-outline-secondary w-100 fw-semibold fs-5" onclick="window.location.href='cart.html'">View Cart</a>
                         </div>
-                        <hr>
-                        <a href="#" class="btn btn-outline-secondary w-100 fw-semibold fs-5" onclick="window.location.href='cart.html'">View Cart</a>
-                    </div>
-                </div>                      
-            </li>
-            <button class="btn-log btn-log-out " onclick="window.location.href='index.html'">Log out</button>
-        </div>
+                    </div>                      
+                </li>
+                <button class="btn-log btn-log-out " onclick="window.location.href='index.html'">Log out</button>
+            </div>
         </div>
     </nav>
 
     <div class="col-10 mx-auto mt-4">
         <div class="row justify-content-center row-gap-4 column-gap-5">
-            <div class="cart-item col-12 col-md-5  rounded-4 px-2 py-3 position-relative">
+            <div class="cart-item col-12 col-xl-5  rounded-4 px-2 py-2 py-md-3 position-relative">
                 <div class="d-flex">
-                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image me-4 rounded-4" width="170px" max-height="250px">
-                    <div>
-                        <h3 class="fw-semibold mt-1">Product Name</h3>
-                        <h5 class="my-3">Category: <span class="text-secondary">Category Name</span></h5>
-                        <h5>Price: <span class="text-success">$100</span></h5>
-                        <div class="d-flex align-items-center mt-3">
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
-                            <span class="mx-3">1</span>
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
-                        </div>
-                    </div>
-                    <button class="btn btn-danger fw-bold align-self-end w-25 remove-item justify-content-end">Remove item</button>
-                </div>
-            </div>
-            <div class="cart-item col-12 col-md-5  rounded-4 px-2 py-3 position-relative">
-                <div class="d-flex">
-                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image me-4 rounded-4 object-fit-cover" width="170px" max-height="90%">
-                    <div>
-                        <h3 class="fw-semibold mt-1">Product Name</h3>
-                        <h5 class="my-3">Category: <span class="text-secondary">Category Name</span></h5>
-                        <h5>Price: <span class="text-success">$100</span></h5>
-                        <div class="d-flex align-items-center mt-3">
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
-                            <span class="mx-3">1</span>
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
-                        </div>
-                    </div>
-                    <button class="btn btn-danger fw-bold align-self-end w-25 remove-item justify-content-end">Remove item</button>
-                </div>
-            </div>
-            <div class="cart-item col-12 col-md-5  rounded-4 px-2 py-3 position-relative">
-                <div class="d-flex">
-                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image me-4 rounded-4 " width="170px" max-height="250px">
-                    <div>
-                        <h3 class="fw-semibold mt-1">Product Name</h3>
-                        <h5 class="my-3">Category: <span class="text-secondary">Category Name</span></h5>
-                        <h5>Price: <span class="text-success">$100</span></h5>
-                        <div class="d-flex align-items-center mt-3">
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
-                            <span class="mx-3">1</span>
-                            <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
-                        </div>
-                    </div>
-                    <button class="btn btn-danger fw-bold align-self-end w-25 remove-item justify-content-end">Remove item</button>
-                </div>
-            </div>
-            <div class="cart-item col-12 col-md-5  rounded-4 px-2 py-2 py-md-3 position-relative">
-                <div class="d-flex">
-                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image me-4 rounded-4" width="170px" max-height="250px">
-                    <div class="d-flex flex-column justify-content-center align-items-cent">
-                        <h3 class="fw-semibold mt-md-1 product-name">Product Name</h3>
+                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image align-self-center align-self-lg-auto me-3 me-md-4 rounded-4" width="170px" max-height="250px">
+                    <div class="d-flex flex-column w-100 justify-content-center mt-md-1">
+                        <h3 class="fw-semibold product-name">Product Name</h3>
                         <h5 class="my-2 my-md-3 category-name">Category: <span class="text-secondary">Category Name</span></h5>
                         <h5 class="price-text">Price: <span class="text-success">$100</span></h5>
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex align-items-center mt-2 mt-md-3">
+                        <div class="d-flex align-items-center justify-content-between mt-2 mt-md-3">
+                            <div class="justify-content-center align-items-center d-flex gap-1">
                                 <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
                                 <span class="mx-2 mx-md-3">1</span>
                                 <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
                             </div>
-                            <button class="btn btn-danger fw-bold align-self-end remove-item justify-content-end">Remove item</button>
+                            <button class="btn btn-danger fw-bold remove-item px-md-4 me-md-3">Remove item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item col-12 col-xl-5  rounded-4 px-2 py-2 py-md-3 position-relative">
+                <div class="d-flex">
+                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image align-self-center align-self-lg-auto me-3 me-md-4 rounded-4" width="170px" max-height="250px">
+                    <div class="d-flex flex-column w-100 justify-content-center mt-md-1">
+                        <h3 class="fw-semibold product-name">Product Name</h3>
+                        <h5 class="my-2 my-md-3 category-name">Category: <span class="text-secondary">Category Name</span></h5>
+                        <h5 class="price-text">Price: <span class="text-success">$100</span></h5>
+                        <div class="d-flex align-items-center justify-content-between mt-2 mt-md-3">
+                            <div class="justify-content-center align-items-center d-flex gap-1">
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                <span class="mx-2 mx-md-3">1</span>
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                            </div>
+                            <button class="btn btn-danger fw-bold remove-item px-md-4 me-md-3">Remove item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item col-12 col-xl-5  rounded-4 px-2 py-2 py-md-3 position-relative">
+                <div class="d-flex">
+                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image align-self-center align-self-lg-auto me-3 me-md-4 rounded-4" width="170px" max-height="250px">
+                    <div class="d-flex flex-column w-100 justify-content-center mt-md-1">
+                        <h3 class="fw-semibold product-name">Product Name</h3>
+                        <h5 class="my-2 my-md-3 category-name">Category: <span class="text-secondary">Category Name</span></h5>
+                        <h5 class="price-text">Price: <span class="text-success">$100</span></h5>
+                        <div class="d-flex align-items-center justify-content-between mt-2 mt-md-3">
+                            <div class="justify-content-center align-items-center d-flex gap-1">
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                <span class="mx-2 mx-md-3">1</span>
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                            </div>
+                            <button class="btn btn-danger fw-bold remove-item px-md-4 me-md-3">Remove item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item col-12 col-xl-5  rounded-4 px-2 py-2 py-md-3 position-relative">
+                <div class="d-flex">
+                    <img src="images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg"  alt="cart-image" class="cart-image align-self-center align-self-lg-auto me-3 me-md-4 rounded-4" width="170px" max-height="250px">
+                    <div class="d-flex flex-column w-100 justify-content-center mt-md-1">
+                        <h3 class="fw-semibold product-name">Product Name</h3>
+                        <h5 class="my-2 my-md-3 category-name">Category: <span class="text-secondary">Category Name</span></h5>
+                        <h5 class="price-text">Price: <span class="text-success">$100</span></h5>
+                        <div class="d-flex align-items-center justify-content-between mt-2 mt-md-3">
+                            <div class="justify-content-center align-items-center d-flex gap-1">
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">-</button>
+                                <span class="mx-2 mx-md-3">1</span>
+                                <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold">+</button>
+                            </div>
+                            <button class="btn btn-danger fw-bold remove-item px-md-4 me-md-3">Remove item</button>
                         </div>
                     </div>
                 </div>

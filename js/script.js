@@ -69,11 +69,11 @@ class product {
 
 const products = [
     new product(1, 'watch', 100, 'Watches', 'men', 'images/freepik__background__628022.jpg'),
-    new product(2, 'PS5', 1200 , 'Video Games', 'sexual', 'images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg'),
+    new product(2, 'golden nicklace', 1200 , 'Video Games', 'sexual', 'images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg'),
     new product(3, 'PS4', 1000 , 'Video Games', 'sexual', ''),
     new product(4, 'PS3', 800 , 'Video Games', 'sexual', ''),
     new product(5, 'PS2', 600 , 'Video Games', 'sexual', ''),
-    new product(6, 'PS1', 400 , 'Video Games', 'sexual', ''),
+    new product(6, 'PS1', 400 , 'Video', 'sexual', ''),
     new product(7, 'breclet', 100, 'breclets', 'men', 'images/freepik__background__628022.jpg')
 ]
 
@@ -89,10 +89,10 @@ function displayProducts(productsList = products) {
         
     productsList.forEach(product => {
         const productContent = 
-        `<div class=" col-6 col-xl-4 mb-3 mb-md-4 px-1 px-md-3">
+        `<div class="product-contain col-6 col-xl-4 mb-3 mb-md-4 px-md-3">
             <div class="card product-card">
                 <img src="${product.image}" alt="${product.name}" class="card-img-top product-image">
-                <div class="card-body text-center py-2 py-md-3">
+                <div class="card-body w-100 text-md-center px-2 py-2 py-md-3">
                     <h4 class="card-title mb-2 mb-md-3 fw-bold">${product.name}</h4>
                     <p class="card-text mb-1 mb-md-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
                     <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
@@ -159,4 +159,8 @@ if(cartProductContainer.innerHTML.trim() === ''){
 }else{
     cartStatus.textContent = 'Products'
 }
+
+     
+
+
 

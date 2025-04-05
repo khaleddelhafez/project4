@@ -1,8 +1,4 @@
 .remove-item {
-    margin-bottom: 23px;
-    position: absolute;
-    bottom: 0;
-    right: 30px;
     font-size: 15px !important;
 }
 
@@ -46,8 +42,12 @@
 }
 @media (max-width: 768px) {
     .remove-item {
-        right: 10px;
-        font-size: 12px !important;
+        font-size: 11px !important;
+    }
+    .mp-btn {
+        width: 25px;
+        height: 25px;
+        padding: 2px 0px 0 0 !important;
     }
     .product-name {
         font-size: 18px;
@@ -59,7 +59,8 @@
         font-size: 14px;
     }
     .cart-image {
-        height: 160px;
+        /* height: 160px; */
+        width: 120px;
     }
     .fav-item {
         width: 240px !important;

@@ -25,8 +25,8 @@ body {
     height: 47px;
 }
 .btn-log {
-    width: 110px;
-    height: 60px;
+    width: 105px;
+    height: 58px;
     font-size: 18px;
     font-weight: 600;
     border-radius: 18px ;
@@ -95,7 +95,7 @@ body {
     width: 100%;
     transition: 0.3s ease;
     /* max-height: 320px; */
-    height: clamp(270px , 320px, 370px);
+    height: clamp(270px , 350px, 420px);
     /* aspect-ratio: 1/1 !important; */
     object-fit: cover;
 }
@@ -192,7 +192,7 @@ body {
 #cart-collapse {
     width: 300px;
     /* height: 300px; */
-    transform: translateX(-10%);
+    transform: translateX(-30%);
     margin-top: 20px;
     box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.4);
     /* max-height: 800px;
@@ -208,22 +208,28 @@ body {
 .mp-btn {
     width: 30px;
     height: 30px;
-    /* border-radius: 50%; */
-    /* border: none; */
-    
 }
-/* .position-fixed {
-    width: 500px;
-    height: 70px;
-    box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.4);
-    border-radius: 18px;
-} */
-
 
 @media screen and (max-width: 768px) {
     .card-text {
-        font-size: 14px;
+        font-size: 12px;
     } 
+    .product-contain {
+        padding: 0 3px !important;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .cart-text {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+    .cart-count {
+        transform: scale(0.92) translate(-50%, -100%);
+    }
+    .cart-icon {
+        font-size: 19px !important;
+    }
     .product-image {
         height: 200px !important;
     }
@@ -252,6 +258,7 @@ body {
         margin-left: 20px !important;
         font-size: 15px;
         border-radius: 15px;
+        transform: scale(0.9) translateY(-5px);
     }
     .btn-log:after {
         border-radius: 15px;
@@ -272,6 +279,9 @@ body {
     }
     .having-account {
         font-size: 15px !important;
+    }
+    .card-img-top {
+        height: clamp(170px,220px, 270px) !important;
     }
 
 }
