@@ -234,6 +234,9 @@ body {
     .fa-heart {
         font-size: 20px;
     }
+    fs-small {
+        font-size: 9px;
+    }
     .logo-img {
         width: clamp(150px, 170px,200px);
     }
