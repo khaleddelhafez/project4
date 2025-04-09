@@ -250,8 +250,8 @@ body {
         padding: 8px 5px !important;
         font-size: 13px !important;
     }
-    .px {
-        padding: 8px 1px !important;
+    .fs-small {
+        font-size: 9px !important;
     }
     .fa-heart {
         font-size: 20px;
