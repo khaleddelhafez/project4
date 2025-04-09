@@ -431,7 +431,7 @@ function displayCartItems(){
                     <div class="d-flex align-items-center justify-content-between mt-2 mt-md-3">
                         <div class="justify-content-center align-items-center d-flex gap-1">
                             <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold" onclick="decreaceQuantity(${item.id})">-</button>
-                            <span id="itemQuantity${item.id}" class="mx-3">${item.quantity}</span>
+                            <span id="itemQuantity${item.id}" class="mx-md-3 mx-1">${item.quantity}</span>
                             <button class="btn btn-sm btn-outline-secondary mp-btn fw-bold" onclick="increaseQuantity(${item.id})">+</button>
                         </div>
                         <button class="btn btn-danger fw-bold remove-item px-2 px-md-4 me-md-3" onclick="removeFromCart(${item.id})">Remove item</button>
