@@ -280,7 +280,7 @@ function displayProducts(productsList) {
                     <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
                     <div class="action-container d-flex gap-3 align-items-center justify-content-center">
                         <i class="fa-solid fa-heart favorite-icon mb-0 mb-md-1 ${product.isFavorite ? 'active' : ''}" onclick="toggleFavorite(${product.id})"></i>
-                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove' : 'add-cart-add'}" onclick= "toggleCart(${product.id})">
+                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove px' : 'add-cart-add'}" onclick= "toggleCart(${product.id})">
                             ${product.isInCart ? 'Remove from Cart' : 'Add to Cart'}
                         </button>
                     </div>
@@ -384,14 +384,7 @@ function toggleCart(productId) {
     }else {
         product.isInCart = true;
         product.quantity = 1;
-        cart.push({ 
-            id: product.id, 
-            name: product.name, 
-            price: product.price, 
-            image: product.image, 
-            quantity: product.quantity,
-            category: product.category
-        });    
+        cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: product.quantity});    
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     
