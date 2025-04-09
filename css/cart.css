@@ -22,8 +22,8 @@
     margin-left: 20px;
     transition: 0.4s ease;
 }
-.fav-products:hover  .fav-underline {
-    width: 50%;
+.fav-products-title:hover ~ .fav-underline {
+    width: 30%;
 }
 .card-img-top {
     height: 250px;
