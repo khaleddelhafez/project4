@@ -235,7 +235,7 @@ body {
         font-size: 20px;
     }
     fs-small {
-        font-size: 9px;
+        font-size: 10px;
     }
     .logo-img {
         width: clamp(150px, 170px,200px);
