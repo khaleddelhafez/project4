@@ -375,7 +375,7 @@ let cartcount = 0 ;
 function toggleCart(productId) {
     const isLoggedIn = JSON.parse(localStorage.getItem('loggedIn'));
     console.log("toggleCart clicked", isLoggedIn);
-    if(!isLoggedIn) {
+    if(!isLoggedIn && window.location.href.includes('index.html')) {
         const confirm = window.confirm('You need to login to add items to your cart. Do you wish to login now ?');
         if(confirm) {
             window.location.href = 'login.html';
