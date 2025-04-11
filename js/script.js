@@ -58,9 +58,9 @@ function displayProducts(productsList) {
     })
 }
 // Only call displayProducts if we're on a page with products
-if (window.location.href.includes('index.html') || window.location.href.includes('loggedin.html')) {
+//if (window.location.href.includes('index.html') || window.location.href.includes('loggedin.html')) {
     displayProducts(products);
-}
+//}
 
 // /////////////////  functions 
 
