@@ -223,6 +223,9 @@ body {
     .card-text {
         font-size: 12px;
     } 
+    .card-title {
+        font-size: 14px !important;
+    }
     .product-contain {
         padding: 0 3px !important;
     }

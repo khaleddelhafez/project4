@@ -28,12 +28,6 @@ const products = [
 
 function displayProducts(productsList) {
     const productsContainer = document.getElementById('products-container');
-    
-    // Only proceed if we're on a page with a products container
-    if (!productsContainer) {
-        return;
-    }
-    
     productsContainer.innerHTML = '';
         
     productsList.forEach(product => {
@@ -47,7 +41,7 @@ function displayProducts(productsList) {
                     <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
                     <div class="action-container d-flex gap-3 align-items-center justify-content-center">
                         <i class="fa-solid fa-heart favorite-icon mb-0 mb-md-1 ${product.isFavorite ? 'active' : ''}" onclick="toggleFavorite(${product.id})"></i>
-                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove px-1 px-md-3' : 'add-cart-add'}" onclick= "toggleCart(${product.id})">
+                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove px-1 px-md-3' : 'add-cart-add px-2 px-md-3'}" onclick= "toggleCart(${product.id})">
                             ${product.isInCart ? 'Remove from cart' : 'Add to Cart'}
                         </button>
                     </div>
@@ -58,9 +52,9 @@ function displayProducts(productsList) {
     })
 }
 // Only call displayProducts if we're on a page with products
-if (window.location.href.includes('index.html') || window.location.href.includes('loggedin.html')) {
+//if (window.location.href.includes('index.html') || window.location.href.includes('loggedin.html')) {
     displayProducts(products);
-}
+// }
 
 // /////////////////  functions 
 
