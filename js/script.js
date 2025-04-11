@@ -57,7 +57,10 @@ function displayProducts(productsList) {
         productsContainer.insertAdjacentHTML("beforeend", productContent)
     })
 }
-
+// Only call displayProducts if we're on a page with products
+if (window.location.href.includes('index.html') || window.location.href.includes('loggedin.html')) {
+    displayProducts(products);
+}
 
 // /////////////////  functions 
 
@@ -297,10 +300,7 @@ function logout() {
 
 
 
-// Only call displayProducts if we're on a page with products
-if (window.location.href.includes('loggedin.html') || window.location.href.includes('index.html')) {
-    displayProducts(products);
-}
+
 
 function searchProducts() {
     const searchType = document.getElementById("searchType").value;
