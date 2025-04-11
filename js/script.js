@@ -1,3 +1,64 @@
+// ////////////// products section
+
+class Product {
+    constructor(id,name, price, category, genre, image) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.genre = genre;
+        this.image = image;
+        this.isFavorite = false;
+        this.isInCart = false;
+        this.quantity = 1;
+    }
+}
+
+const products = [
+    new Product(1, 'Golden Watch', 400, 'Watches', 'women', 'https://img.freepik.com/premium-photo/silver-gold-watch-isolated-white-background-ai-generated_1022157-5368.jpg'),
+    new Product(2, 'Nike Black Shoes', 470 , 'Shoes', 'men', 'https://us.thesportsedit.com/cdn/shop/files/nike-motiva-shoes-black-anthracite-white-dv1238-001_2.jpg?v=1730195688'),
+    new Product(3, 'PS5', 600 , 'Video Games', 'sexual', 'images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg'),
+    new Product(4, 'Silver Bracelet', 200 , 'Bracelets', 'women', 'https://img.freepik.com/premium-photo/luxury-metal-braclet-woman-silver-braided-bracelet-isolated-blue-background-top-view_116124-15295.jpg'),
+    new Product(5, 'Nintendo Switch', 420 , 'Video Games', 'sexual', 'https://static.independent.co.uk/2025/04/03/8/54/nintendo-switch-2.png'),
+    new Product(6, 'Nike Blue Shoes', 390 , 'Shoes', 'men', 'https://www.cosmossport.gr/3030148/nike-gt-hustle-academy.jpg'),
+    new Product(7, 'Diamond Bracelet', 150, 'bracelets', 'women', 'https://media.istockphoto.com/id/1718392741/photo/beautiful-gemstone-crystal-bracelet-unique-handmade-stone-bead-jewelry-background-promotional.jpg?s=612x612&w=0&k=20&c=hYDVWIRpObQDcoZxMqxvqME2JI-ZaypfcmHAz7lOBsU='),
+    new Product(8, 'Platinum Watch', 350, 'Watches', 'men', 'images/freepik__background__628022.jpg'),
+    new Product(9, 'Silver Necklace', 100, 'Necklaces', 'men', 'https://img.freepik.com/premium-psd/ankle-bracelet-mockup-design_23-2151053612.jpg')
+]
+
+function displayProducts(productsList) {
+    const productsContainer = document.getElementById('products-container');
+    
+    // Only proceed if we're on a page with a products container
+    if (!productsContainer) {
+        return;
+    }
+    
+    productsContainer.innerHTML = '';
+        
+    productsList.forEach(product => {
+        const productContent =
+        `<div class="product-contain col-6 col-xl-4 mb-3 mb-md-4 px-md-3">
+            <div class="card product-card">
+                <img src="${product.image}" alt="${product.name}" class="card-img-top product-image">
+                <div class="card-body w-100 text-md-center px-2 py-2 py-md-3">
+                    <h4 class="card-title mb-2 mb-md-3 fw-bold">${product.name}</h4>
+                    <p class="card-text mb-1 mb-md-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
+                    <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
+                    <div class="action-container d-flex gap-3 align-items-center justify-content-center">
+                        <i class="fa-solid fa-heart favorite-icon mb-0 mb-md-1 ${product.isFavorite ? 'active' : ''}" onclick="toggleFavorite(${product.id})"></i>
+                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove px-1 px-md-3' : 'add-cart-add'}" onclick= "toggleCart(${product.id})">
+                            ${product.isInCart ? 'Remove from cart' : 'Add to Cart'}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        productsContainer.insertAdjacentHTML("beforeend", productContent)
+    })
+}
+
+
 // /////////////////  functions 
 
 function saveCartAndFavorites() {
@@ -79,7 +140,7 @@ function decreaceQuantity(productId){
                 cart.splice(index,1);
             }
             localStorage.setItem('cart', JSON.stringify(cart));
-            
+                        updateCartCollapse();
             // Update product card button
             const productCardButton = document.querySelector(`button[onclick="toggleCart(${productId})"]`)
             if(productCardButton){
@@ -102,7 +163,7 @@ function decreaceQuantity(productId){
 
             // Update displays
             displayCartItems();
-            updateCartCollapse();
+
             updateTotalPrice();
         } else {
             const cartItem = cart.find(p => p.id === productId)
@@ -224,72 +285,17 @@ function login(){
 
 
 function logout() {
-    localStorage.removeItem('loggedInUser');
-    localStorage.removeItem('loggedIn');
     loggedIn = false;
+    localStorage.removeItem('loggedInUser');
+    console.log(loggedIn);
+    console.log(localStorage.getItem('loggedIn'));
+    localStorage.removeItem('loggedIn');
     localStorage.removeItem('favorites');
     localStorage.removeItem('cart');
-    /////////
     window.location.href = 'index.html';
 }
 
-// ////////////// products section
 
-class Product {
-    constructor(id,name, price, category, genre, image) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.category = category;
-        this.genre = genre;
-        this.image = image;
-        this.isFavorite = false;
-        this.isInCart = false;
-        this.quantity = 1;
-    }
-}
-
-const products = [
-    new Product(1, 'watch', 100, 'Watchess', 'men', 'images/freepik__background__628022.jpg'),
-    new Product(2, 'golden nicklace', 1200 , 'Video Games', 'sexual', 'images/f61138da5e0a3af7c7c83b6166f1cb03dbfee30ff.jpg'),
-    new Product(3, 'PS4', 1000 , 'Video Games', 'sexual', ''),
-    new Product(4, 'PS3', 800 , 'Video Games', 'sexual', ''),
-    new Product(5, 'PS2', 600 , 'Video Games', 'sexual', ''),
-    new Product(6, 'PS1', 400 , 'Video', 'sexual', ''),
-    new Product(7, 'breclet', 100, 'breclets', 'men', 'images/freepik__background__628022.jpg')
-]
-
-function displayProducts(productsList) {
-    const productsContainer = document.getElementById('products-container');
-    
-    // Only proceed if we're on a page with a products container
-    if (!productsContainer) {
-        return;
-    }
-    
-    productsContainer.innerHTML = '';
-        
-    productsList.forEach(product => {
-        const productContent = 
-        `<div class="product-contain col-6 col-xl-4 mb-3 mb-md-4 px-md-3">
-            <div class="card product-card">
-                <img src="${product.image}" alt="${product.name}" class="card-img-top product-image">
-                <div class="card-body w-100 text-md-center px-2 py-2 py-md-3">
-                    <h4 class="card-title mb-2 mb-md-3 fw-bold">${product.name}</h4>
-                    <p class="card-text mb-1 mb-md-2 text-secondary">Price: <span class="text-danger fw-semibold text-dark">$${product.price}</span></p>
-                    <p class="card-text mb-3 mb-md-4 text-secondary">Category: <span class="text-danger fw-semibold text-dark">${product.category}</span></p>
-                    <div class="action-container d-flex gap-3 align-items-center justify-content-center">
-                        <i class="fa-solid fa-heart favorite-icon mb-0 mb-md-1 ${product.isFavorite ? 'active' : ''}" onclick="toggleFavorite(${product.id})"></i>
-                        <button class="btn add-cart-btn fw-semibold mb-1 mb-md-2 ${product.isInCart ? 'add-cart-remove px-1 fs-small' : 'add-cart-add'}" onclick= "toggleCart(${product.id})">
-                            ${product.isInCart ? 'Remove from cart' : 'Add to Cart'}
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-        productsContainer.insertAdjacentHTML("beforeend", productContent)
-    })
-}
 
 // Only call displayProducts if we're on a page with products
 if (window.location.href.includes('loggedin.html') || window.location.href.includes('index.html')) {
@@ -323,7 +329,10 @@ function searchProducts() {
 function toggleFavorite(productId) {
     const isLoggedin = JSON.parse(localStorage.getItem('loggedIn'));
     if(!isLoggedin){
-        window.location.href = 'login.html';
+        const confirm = window.confirm('You need to login to add items to your favourite list. Do you wish to login now ?');
+        if(confirm) {
+            window.location.href = 'login.html';
+        }
         return;
     }
     const product = products.find(p => p.id === productId);
@@ -335,7 +344,7 @@ function toggleFavorite(productId) {
     // Update localStorage
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if(product.isFavorite) {
-        if(!favorites.find(f => f.id === productId)) {
+        if(!favorites.find(p => p.id === productId)) {
             favorites.push({id: product.id, name: product.name, price: product.price, image: product.image});
         }
     } else {
@@ -359,9 +368,7 @@ function toggleFavorite(productId) {
 
 const cartCount = document.querySelector(".cart-count");
 
-if(cartCount.innerHTML >= 10){
-    cartCount.style.fontSize = '18px';
-}
+
 
 // ///////////////////////////////// cart ///////////////////////////////////////////
 
@@ -369,8 +376,12 @@ let cartcount = 0 ;
 
 function toggleCart(productId) {
     const isLoggedIn = JSON.parse(localStorage.getItem('loggedIn'));
+    console.log("toggleCart clicked", isLoggedIn);
     if(!isLoggedIn) {
-        window.location.href = 'login.html';
+        const confirm = window.confirm('You need to login to add items to your cart. Do you wish to login now ?');
+        if(confirm) {
+            window.location.href = 'login.html';
+        }
         return;
     }
     const product = products.find(p => p.id === productId);
@@ -387,19 +398,10 @@ function toggleCart(productId) {
         cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: product.quantity});    
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Update UI
-    const addToCartBtn = document.querySelector(`button[onclick="toggleCart(${productId})"]`);
-    if(addToCartBtn) {
-        addToCartBtn.textContent = product.isInCart ? 'Remove from Cart' : 'Add to Cart';
-        addToCartBtn.classList.toggle('add-cart-remove', product.isInCart);
-        addToCartBtn.classList.toggle('add-cart-add', !product.isInCart);
-    }
-
-    // Update displays
+    displayProducts(products);
     updateCartCount();
     updateCartCollapse();
-    displayProducts(products);
+
     if(window.location.href.includes('cart.html')){
         displayCartItems();
     }
@@ -421,9 +423,9 @@ function displayCartItems(){
     const cartItemsHtml = cartItems.map(item => {
         const product = products.find(p => p.id === item.id);
         return `
-        <div class="cart-item col-12 col-xl-5 rounded-4 px-2 py-2 py-md-3 position-relative">
-            <div class="d-flex" data-product-id="${item.id}">
-                <img src="${item.image}" alt="${item.name}" class="cart-image align-self-center align-self-lg-auto me-2 me-md-4 rounded-4" width="170px" max-height="250px">
+        <div class="cart-item col-12 col-xl-5 align-items-center rounded-4 px-2 py-2 py-md-3 position-relative">
+            <div class="d-flex h-100" data-product-id="${item.id}">
+                <img src="${item.image}" alt="${item.name}" class="cart-image align-self-center object-fit-cover align-self-lg-auto  me-2 me-md-4 rounded-4" width="187px">
                 <div class="d-flex flex-column w-100 justify-content-center mt-md-1">
                     <h3 class="fw-semibold product-name">${item.name}</h3>
                     <h5 class="my-2 my-md-3 category-name text-secondary">Category: <span class="text-body">${product ? product.category : item.category}</span></h5>
