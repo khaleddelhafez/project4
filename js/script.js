@@ -1,3 +1,5 @@
+let loggedIn = false;
+
 // ////////////// products section
 
 class Product {
@@ -199,7 +201,7 @@ function removeFavorite(productId) {
         if(index > -1){
             favorites.splice(index,1);
         }
-        localStorage.setItem('favourites', JSON.stringify(favorites));
+        localStorage.setItem('favorites', JSON.stringify(favorites));
         const productCardHeart = document.querySelector(`.fa-heart[onclick = 'toggleFavorite(${productId}']`);
         if(productCardHeart){
             productCardHeart.classList.remove('active');
@@ -216,20 +218,24 @@ function displayFavoriteItems(){
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const favoriteItemsContainer = document.getElementById('favorite-items');
     favoriteItemsContainer.innerHTML = '';
-    if(favorites.length === 0) {
-        favoriteItemsContainer.innerHTML = "<p class 'text-center'You have no favorite products"
+    
+    if(favorites.length === 0 || favorites === null) {
+        favoriteItemsContainer.innerHTML = '<p class="text-center">You have no favorite products</p>';
         return;
     }
-    const favoriteItemsHtml = favorites.map(item => `
+    const favoriteItemsHtml = favorites.map(item => {
+        const product = products.find(p => p.id === item.id);
+        const category = product ? product.category : (item.category || 'Unknown');
+        return `
         <div class="fav-item card col-3 col-md-4 my-3" data-product-id="${item.id}">
             <img src="${item.image}" alt="${item.name}" class="card-img-top object-fit-cover" width="100%" height="220px">
             <div class="card-body text-center py-2 py-md-3">
                 <h4 class="fw-semibold">${item.name}</h4>
-                <h6 class="my-2 mb-md-4 mt-md-3">Category: <span class="text-secondary">${item.category}</span></h6>
+                <h6 class="my-2 mb-md-4 mt-md-3">Category: <span class="text-secondary">${category}</span></h6>
                 <i class="fa-solid fa-heart favorite-icon ${item.isFavorite ? 'active' : ''}" onclick="toggleFavorite(${item.id})"></i>
             </div>
-        </div>`
-    ).join('');
+        </div>`;
+    }).join('');
     favoriteItemsContainer.innerHTML = favoriteItemsHtml;
 }
 function updateCartCount(){
@@ -242,7 +248,6 @@ function updateCartCount(){
 
 let registerBtn = document.getElementById("register-btn");
 
-let loggedIn = false;
 
 function register() {
     const firstName = document.querySelector("#firstName").value;
@@ -271,10 +276,12 @@ function login(){
 
     if(users[email] && users[email].password === password ){
         localStorage.setItem('loggedInUser' , JSON.stringify(users[email]));
-        loggedIn = true;
         localStorage.setItem('loggedIn', loggedIn);
+        loggedIn = true;
+        console.log("loggedIn:", loggedIn);
 
         window.location.href = 'loggedin.html';
+        console.log("redirecting to loggedin.html");
     } else {
         alert("Incorrect Email or Password");
     }
@@ -291,9 +298,6 @@ function logout() {
     localStorage.removeItem('cart');
     window.location.href = 'index.html';
 }
-
-
-
 
 
 function searchProducts() {
@@ -322,7 +326,7 @@ function searchProducts() {
 
 function toggleFavorite(productId) {
     const isLoggedin = JSON.parse(localStorage.getItem('loggedIn'));
-    if(!isLoggedin){
+    if(!isLoggedin && window.location.href.includes('index.html')){
         const confirm = window.confirm('You need to login to add items to your favourite list. Do you wish to login now ?');
         if(confirm) {
             window.location.href = 'login.html';
@@ -349,18 +353,18 @@ function toggleFavorite(productId) {
     }
     localStorage.setItem('favorites', JSON.stringify(favorites));
     
-    // Update UI
     const heartIcon = document.querySelector(`.fa-heart[onclick='toggleFavorite(${productId})']`);
     if(heartIcon) {
         heartIcon.classList.toggle('active', product.isFavorite);
     }
-    displayProducts(products);
+
+    // Update displays
     if(window.location.href.includes('cart.html')){
         displayFavoriteItems();
+        saveCartAndFavorites();
+        loadCartAndFavorites();
     }
 }
-
-const cartCount = document.querySelector(".cart-count");
 
 
 
