@@ -275,9 +275,9 @@ function login(){
     const users = JSON.parse(localStorage.getItem("users")) || {};
 
     if(users[email] && users[email].password === password ){
+        loggedIn = true;
         localStorage.setItem('loggedInUser' , JSON.stringify(users[email]));
         localStorage.setItem('loggedIn', loggedIn);
-        loggedIn = true;
         console.log("loggedIn:", loggedIn);
 
         window.location.href = 'loggedin.html';
@@ -482,8 +482,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const isLoggedIn = JSON.parse(localStorage.getItem('loggedIn'));
     if(loggedInUser && isLoggedIn){
         loggedIn = true;
-        document.querySelector('.welcome-text').textContent = `Welcome, ${loggedInUser.firstName}`;
-    }else {
+        const welcomeText = document.querySelector('.welcome-text');
+        if(welcomeText) {
+            welcomeText.textContent = `Welcome, ${loggedInUser.firstName}`;
+        }
+    } else {
         loggedIn = false;
     }
     loadCartAndFavorites()
