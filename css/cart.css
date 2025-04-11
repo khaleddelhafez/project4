@@ -64,8 +64,8 @@
         font-size: 14px;
     }
     .cart-image {
-        /* height: 160px; */
-        width: 120px;
+        max-height: 125px;
+        min-width: 120px !important;
     }
     .fav-item {
         width: 240px !important;
